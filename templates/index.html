@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Answering System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Question Answering System</h1>
+        
+        <form method="POST">
+            <label for="context">Enter Text Corpus:</label><br>
+            <textarea name="context" rows="5" cols="50" required></textarea><br><br>
+
+            <label for="question">Enter Your Question:</label><br>
+            <input type="text" name="question" required><br><br>
+
+            <input type="submit" value="Get Answer">
+        </form>
+
+        {% if answer %}
+            <div class="answer-box">
+                <h2>Answer:</h2>
+                <p>{{ answer }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
